@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+input {
+  font-family: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ── Animations (all gated behind the `motion` prop in component code) ── */
+
+@keyframes gradShift {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+/* glowPulse uses --gc (per-card glow color set as a CSS custom property) */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 10px 26px -16px var(--gc); }
+  50%       { box-shadow: 0 16px 40px -14px var(--gc); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0);   }
+  50%       { transform: translateY(-5px); }
+}
+
+@keyframes detailIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
